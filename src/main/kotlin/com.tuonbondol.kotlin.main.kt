@@ -24,3 +24,19 @@ fun main(args: Array<String>) {
     val aLong:Long = anInt.toLong()
 }
 
+// Comment Code
+
+// One Line Comment
+
+/*
+    Multiple Line Comment
+ */
+
+/*
+fun emptyFunction(){
+    /*
+        Inside Function boy comment
+     */
+}
+*/
+

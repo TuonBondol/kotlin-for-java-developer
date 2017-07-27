@@ -1,6 +1,7 @@
 import com.Animal
 import com.tuonbondol.kotlin.Car
 import com.tuonbondol.kotlin.Person
+import com.tuonbondol.kotlin.Position
 import com.tuonbondol.kotlin.max
 
 // Comment Code
@@ -34,7 +35,17 @@ fun JavaInterop(){
     println(Frisky.show())
 }
 
+fun userOverload(){
+    val p1 = Position(200, 100)
+    val p2 = Position(1000, 2000)
+    val p3 = p1 + p2
+    println(p3)
+}
+
 fun main(args: Array<String>) {
+
+    userOverload()
+    return
 
     JavaInterop()
     return

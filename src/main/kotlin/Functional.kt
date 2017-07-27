@@ -3,6 +3,7 @@ package com.tuonbondol.kotlin
 import org.funktionale.collections.destructured
 import org.funktionale.composition.compose
 import org.funktionale.composition.forwardCompose
+import org.funktionale.currying.*
 
 fun functional() {
     val (head, tail) = listOf(1, 2, 3).destructured()
@@ -18,6 +19,12 @@ fun functional() {
     val add5andMultiplyBy2 = add5 forwardCompose  multiplyBy2
     val forwardComposeResults = add5andMultiplyBy2(10)
     println("add5andMultiplyBy2 = $forwardComposeResults")
+
+    val sum3ints = {x: Int, y: Int, z:Int -> x + y + z}
+    val curried: (Int) -> (Int) -> (Int) -> Int = sum3ints.curried()
+    val cur = curried(2)(4)(6)
+
+    println("curried(2)(4)(6) = $cur")
 }
 
 fun main(args: Array<String>) {

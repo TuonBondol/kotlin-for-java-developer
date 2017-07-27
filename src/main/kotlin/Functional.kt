@@ -4,6 +4,8 @@ import org.funktionale.collections.destructured
 import org.funktionale.composition.compose
 import org.funktionale.composition.forwardCompose
 import org.funktionale.currying.*
+import org.funktionale.partials.partially1
+import org.funktionale.partials.partially3
 
 fun functional() {
     val (head, tail) = listOf(1, 2, 3).destructured()
@@ -25,6 +27,12 @@ fun functional() {
     val cur = curried(2)(4)(6)
 
     println("curried(2)(4)(6) = $cur")
+
+    val prefixAndPostfix:(String, String, String) -> String =
+            { prefix: String, x:String, postfix: String -> "${prefix}${x}${postfix}"}
+    val prefixAndBang:(String, String) -> String = prefixAndPostfix.partially3("!")
+    val hello: (String) -> String = prefixAndBang.partially1("Hello")
+    println(hello("Funktianale"))
 }
 
 fun main(args: Array<String>) {

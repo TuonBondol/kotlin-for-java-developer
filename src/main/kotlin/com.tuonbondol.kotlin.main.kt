@@ -3,6 +3,7 @@ import com.tuonbondol.kotlin.Car
 import com.tuonbondol.kotlin.Person
 import com.tuonbondol.kotlin.Position
 import com.tuonbondol.kotlin.max
+import kotlin.reflect.full.memberProperties
 
 // Comment Code
 
@@ -42,9 +43,20 @@ fun userOverload(){
     println(p3)
 }
 
+
+
 fun main(args: Array<String>) {
 
     val dara = Person("Dara", "Chan")
+
+    val kClass = dara.javaClass.kotlin
+    println("Simple name = ${kClass.simpleName}")
+
+    for(name in kClass.memberProperties){
+        println("Property name = ${name.name}")
+    }
+
+    return
 
     userOverload()
     return

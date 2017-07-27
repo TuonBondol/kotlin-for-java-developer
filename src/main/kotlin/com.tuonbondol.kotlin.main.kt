@@ -44,6 +44,8 @@ fun userOverload(){
 
 fun main(args: Array<String>) {
 
+    val dara = Person("Dara", "Chan")
+
     userOverload()
     return
 

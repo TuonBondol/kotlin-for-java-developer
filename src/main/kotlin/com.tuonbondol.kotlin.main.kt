@@ -1,5 +1,6 @@
 import com.tuonbondol.kotlin.Car
 import com.tuonbondol.kotlin.Person
+import com.tuonbondol.kotlin.max
 
 // Comment Code
 
@@ -23,7 +24,17 @@ object MySingleTon{
 }
 
 fun main(args: Array<String>) {
-    println("Hello World!")
+
+    val maxInt:Int = max(42, 99)
+    val maxLong: Long = max(123456789L, 999999999L)
+    val maxByte: Byte = max ((-128).toByte(), (127).toByte())
+    val maxString: String = max("Beta", "Alpha")
+
+    println("The max Int = $maxInt")
+    println("The max Long = $maxLong")
+    println("The max Byte = $maxByte")
+    println("The max String = $maxString")
+    return
 
     val me = Person("Tuon", "Bondol")
     val you = Person("Dara", "Chan", "Yang")

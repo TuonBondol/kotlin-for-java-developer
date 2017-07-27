@@ -16,11 +16,32 @@ fun emptyFunction(){
 }
 */
 
+object MySingleTon{
+    var temperatures = arrayOf(80, 76, 90)
+    fun getLastTemperature() = temperatures.last()
+}
+
 fun main(args: Array<String>) {
     println("Hello World!")
 
     val me = Person("Tuon", "Bondol")
     val you = Person("Dara", "Chan", "Yang")
+
+    val location = object {
+        var xPosition = 200
+        var yPosition = 400
+        fun printIt(){
+            println("Position = ($xPosition, $yPosition)")
+        }
+    }
+    location.printIt()
+    location.xPosition = 2000
+    location.yPosition = 4000
+    location.printIt()
+
+    val temperature = MySingleTon.getLastTemperature()
+    println("Last reading = $temperature degrees")
+
     return
 
     // Type Inference

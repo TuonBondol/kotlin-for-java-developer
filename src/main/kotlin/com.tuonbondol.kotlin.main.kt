@@ -1,3 +1,4 @@
+import com.Animal
 import com.tuonbondol.kotlin.Car
 import com.tuonbondol.kotlin.Person
 import com.tuonbondol.kotlin.max
@@ -23,7 +24,20 @@ object MySingleTon{
     fun getLastTemperature() = temperatures.last()
 }
 
+fun JavaInterop(){
+    val Frisky = Animal("Frisky", "cat", 10)
+    println(Frisky.show())
+    val Fido = Animal("Fido", "dog", 30)
+    println(Fido.show())
+
+    Frisky.weight = 15
+    println(Frisky.show())
+}
+
 fun main(args: Array<String>) {
+
+    JavaInterop()
+    return
 
     val maxInt:Int = max(42, 99)
     val maxLong: Long = max(123456789L, 999999999L)

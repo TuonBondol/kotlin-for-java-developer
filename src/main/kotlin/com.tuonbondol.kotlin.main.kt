@@ -1,3 +1,5 @@
+import com.tuonbondol.kotlin.Person
+
 // Comment Code
 
 // One Line Comment
@@ -16,6 +18,10 @@ fun emptyFunction(){
 
 fun main(args: Array<String>) {
     println("Hello World!")
+
+    val me = Person("Tuon", "Bondol")
+    val you = Person("Dara", "Chan", "Yang")
+    return
 
     // Type Inference
     val aSentence = "I'm a string"

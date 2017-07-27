@@ -26,6 +26,18 @@ object MySingleTon{
     fun getLastTemperature() = temperatures.last()
 }
 
+class Point(val x:Int, val y: Int, val z: Int){
+    operator fun component1():Int = x
+    operator fun component2():Int = y
+    operator fun component3():Int = z
+}
+
+fun showComponent(){
+    val myPoint = Point(5000, 500, 60000)
+    val (myX, myY, myZ) = myPoint
+    println("myX = $myX myY = $myY myZ = $myZ")
+}
+
 fun JavaInterop(){
     val Frisky = Animal("Frisky", "cat", 10)
     println(Frisky.show())
@@ -41,11 +53,17 @@ fun userOverload(){
     val p2 = Position(1000, 2000)
     val p3 = p1 + p2
     println(p3)
+
+    val (xPosition, yPosition) = p1
+    println("xPosition = $xPosition, yPosition = $yPosition")
+    println("c1 = ${p1.component1()}")
 }
 
-
-
 fun main(args: Array<String>) {
+
+    showComponent()
+
+    return
 
     val dara = Person("Dara", "Chan")
 
@@ -55,8 +73,6 @@ fun main(args: Array<String>) {
     for(name in kClass.memberProperties){
         println("Property name = ${name.name}")
     }
-
-    return
 
     userOverload()
     return

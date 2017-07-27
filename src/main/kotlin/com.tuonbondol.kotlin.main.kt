@@ -13,7 +13,7 @@ fun main(args: Array<String>) {
     var myDouble = 1.999
     var myFloat = 1.9F
     var myLong = 1234L
-    var myInt = 12
+    val myInt = 12
     var myShort:Short = 12
     var myByte:Byte = 127
 
@@ -22,6 +22,57 @@ fun main(args: Array<String>) {
 
     val anInt: Int = 1
     val aLong:Long = anInt.toLong()
+
+    // If expression
+    val lowest = if(myInt < anInt) myInt else anInt
+    println("The lowest value $lowest")
+
+    val temp = 60
+    val isAirConditionalOn = if (temp >= 80){
+        println("It is warm")
+        true
+    } else{
+        println("It is not so warm")
+        false
+    }
+    println("Is the air conditioner on: $isAirConditionalOn")
+    // End of if expression
+
+    // When expression
+    val burgerOdered = 8
+    when (burgerOdered){
+        0 -> println("Not so hungry")
+        1,2 -> println("Hungry")
+        3 -> println("Very Hungry")
+        else ->{
+            println("Are your sure?")
+        }
+    }
+
+    // Use when for get the absolute number
+    when(burgerOdered){
+        Math.abs(burgerOdered) -> println("order 0 or more burgers")
+        else -> {
+            println("Ordered less than 0")
+        }
+    }
+
+    // User when with between range of number
+    when(burgerOdered){
+        0 -> println("We need orders")
+        in 1..4 -> println("Got some orders")
+        in 5..9 -> println("Business is up")
+        else ->{
+            println("Not sure")
+        }
+    }
+
+    // Use when with Operation Sign
+    when{
+        burgerOdered <=0 -> println("None ordered")
+        burgerOdered % 2 == 1 -> println("Odd number ordered")
+        burgerOdered % 2 == 0 -> println("Even number ordered")
+    }
 }
 
 // Comment Code

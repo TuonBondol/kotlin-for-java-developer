@@ -1,3 +1,4 @@
+import com.tuonbondol.kotlin.Car
 import com.tuonbondol.kotlin.Person
 
 // Comment Code
@@ -41,6 +42,11 @@ fun main(args: Array<String>) {
 
     val temperature = MySingleTon.getLastTemperature()
     println("Last reading = $temperature degrees")
+
+    val myCar = Car()
+    myCar.go()
+
+    println("My car's make = ${myCar.MakeName}")
 
     return
 

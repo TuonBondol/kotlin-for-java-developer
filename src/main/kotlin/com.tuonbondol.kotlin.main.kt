@@ -73,6 +73,48 @@ fun main(args: Array<String>) {
         burgerOdered % 2 == 1 -> println("Odd number ordered")
         burgerOdered % 2 == 0 -> println("Even number ordered")
     }
+
+    // While loop
+    var x = 0
+    while (x<10){
+        println("x = $x")
+        x += 3
+    }
+
+    // Do while loop
+    do {
+        println("do while x = $x")
+        x -= 3
+    } while (x>0)
+
+    // For loop int
+    for (item in 0..9){
+        println("$item, ")
+    }
+
+    // For loop String
+    for(ch in "mystring"){
+        println(ch)
+    }
+
+    var ndx = 0
+    for (item in 10.rangeTo(20).step(2)){
+        print("${++ndx}) $item, ")
+    }
+
+    println()
+
+    // for with index
+    for((index, item) in 10.rangeTo(20).step(2).withIndex()){
+        print("${index + 1}) $item, ")
+    }
+    println()
+
+    // for loop with array
+    val myArray = arrayOf(10, 20, 30, 40, 50)
+    for (item in myArray.indices){
+        println("At index $item is the ${myArray[item]}")
+    }
 }
 
 // Comment Code
